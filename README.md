@@ -6,7 +6,7 @@ All API must use this authentication
 
 Request:
 - Header :
-  - X-Api-Key: "your secret api key"
+  - X-Api-Key: "maou.api.key"
 
 ## Create Product
 
