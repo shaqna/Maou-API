@@ -1,0 +1,82 @@
+### Create product
+
+POST http://localhost:8080/api/products
+X-Api-Key: maou.api.key
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "P008",
+  "name": "Mac Book Air ",
+  "price": 30000000,
+  "quantity": 10
+}
+
+### Create product with validation exception
+POST http://localhost:8080/api/products
+X-Api-Key: maou.api.key
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "P001",
+  "name": "Mac Book Air ",
+  "price": 0,
+  "quantity": -10
+}
+
+### Get product
+GET http://localhost:8080/api/products/P001
+X-Api-Key: maou.api.key
+Accept: application/json
+
+### Get Product with not found exception
+GET http://localhost:8080/api/products/P00
+X-Api-Key: maou.api.key
+Accept: application/json
+
+### Update product
+PUT http://localhost:8080/api/products/P003
+X-Api-Key: maou.api.key
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Mac Book Air Pro",
+  "price": 35000000,
+  "quantity": 15
+}
+
+### Update product with not found exception
+PUT http://localhost:8080/api/products/P00
+X-Api-Key: maou.api.key
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Mac Book Air Pro",
+  "price": 35000000,
+  "quantity": 15
+}
+
+### Update product with validation exception
+PUT http://localhost:8080/api/products/P003
+X-Api-Key: maou.api.key
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Mac Book Air Pro",
+  "price": 0,
+  "quantity": -15
+}
+
+### List products
+GET http://localhost:8080/api/products
+X-Api-Key: maou.api.key
+Accept: application/json
+
+### Delete product
+DELETE http://localhost:8080/api/products/P001
+X-Api-Key: maou.api.key
+Accept: application/json

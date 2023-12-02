@@ -1,0 +1,21 @@
+version: "3.5"
+
+services:
+  maou-api:
+    container_name: maou-api
+    image: maou-api:0.0.1
+    ports:
+      - "8080:8080"
+    environment:
+      DATABASE_USERNAME: kotlin
+      DATABASE_PASSWORD: kotlin
+      DATABASE_URL: jdbc:postgresql://maou-db-postgres:5432/maou-db
+  maou-db-postgres:
+    container_name: "maou-db-postgres"
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: kotlin
+      POSTGRES_USER: kotlin
+      POSTGRES_DB: maou-db
